@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas Pro</title>
+    <link rel="stylesheet" href="css/estilo3.css">
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="contenedor">
+        <header>
+            <h1><i class="fas fa-check-double"></i> Mis Tareas</h1>
+            <p id="fecha"></p>
+        </header>
+
+        <div class="input-grupo">
+            <input type="text" id="inputTarea" placeholder="¿Qué necesitas hacer hoy?">
+            <button id="btnAgregar"><i class="fas fa-plus"></i></button>
+        </div>
+
+        <div class="filtros">
+            <button class="filtro-btn activo" data-filtro="todas">Todas</button>
+            <button class="filtro-btn" data-filtro="activas">Activas</button>
+            <button class="filtro-btn" data-filtro">Completadas</button>
+        </div>
+
+        <div class="estadisticas">
+            <span id="contadorTareas">0 tareas</span>
+            <button id="btnLimpiarCompletadas">Limpiar completadas</button>
+        </div>
+
+        <ul id="listaTareas">
+            <!-- Las tareas se agregarán aquí dinámicamente -->
+        </ul>
+
+        <div id="mensajeVacio" class="mensaje-vacio">
+            <i class="fas fa-clipboard-list"></i>
+            <p>No hay tareas pendientes</p>
+        </div>
+    </div>
+
+    <script src="js/main3.js"></script>
+</body>
+</html>

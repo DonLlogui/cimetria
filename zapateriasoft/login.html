@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measurelab</title>
+    <link rel="icon" type="logo-Olgroup" href="./image/logo-login.jpg">
+    <link rel="stylesheet" href="./css/estilo.css">
+</head>
+<body>
+    <img src="./imagen/logo.png" alt="logo" class="logo">
+
+    <div class="container">
+        <div class="form-wrapper">
+            
+            <div id="login-box" class="form-box">
+                <h2>Iniciar Sesión</h2>
+                <form id="login-form">
+                    <input type="email" id="login-correo" placeholder="Correo electrónico" required>
+                    <input type="password" id="login-pass" placeholder="Contraseña" required>
+                    <button type="submit">Ingresar</button>
+                </form>
+                <p>¿No tienes cuenta? <a href="#" id="go-register">Regístrate aquí</a></p>
+            </div>
+
+
+
+            <div id="register-box" class="form-box hidden">
+                <h2>Crear Cuenta</h2>
+                <form id="register-form">
+                    <input type="number" id="reg-documento" placeholder="Numero de documento" required>
+                    <input type="text" id="reg-nombres" placeholder="Nombre de usuario" required>
+                    <input type="number" id="reg-telefono" placeholder="Numero de telefono" required>
+                    <input type="email" id="reg-correo" placeholder="Ingresa correo" required>
+                    <input type="password" id="reg-pass" placeholder="Contraseña" required>
+                    <button type="submit" class="btn-reg">Registrarme</button>
+                </form>
+                <p>¿Ya tienes cuenta? <a href="#" id="go-login">Inicia sesión</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="./js/main.js" type="module"></script>
+</body>
+</html>

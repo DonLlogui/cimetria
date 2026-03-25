@@ -1,0 +1,141 @@
+/* css/estilo.css */
+
+/* Importamos una fuente moderna de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    /* Paleta de colores basada en psicología */
+    --bg-color: #f0f2f5;       /* Gris muy claro: Calma y neutralidad */
+    --card-bg: #ffffff;        /* Blanco: Limpieza y claridad */
+    --text-main: #2c3e50;      /* Azul oscuro grisáceo: Profesionalismo y lectura */
+    --primary: #3498db;        /* Azul: Confianza, lógica y tecnología */
+    --success: #27ae60;        /* Verde: Positivo, éxito (para Sumar) */
+    --danger: #e74c3c;         /* Rojo suave: Atención, resta (para Restar) */
+    --warning: #f39c12;        /* Naranja: Creatividad (para Multiplicar) */
+    --info: #8e44ad;           /* Morado: Sabiduría (para Dividir) */
+    --accent: #f1c40f;         /* Amarillo: Energía (para el botón de pintar) */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: var(--text-main);
+    transition: color 0.3s ease;
+}
+
+/* Contenedor principal (Formulario) */
+form {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra suave para profundidad */
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Inputs */
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+    outline: none;
+}
+
+input:focus {
+    border-color: var(--primary); /* Azul al escribir: foco y atención */
+}
+
+input#respuesta {
+    background-color: #f9f9f9;
+    font-weight: bold;
+    color: var(--text-main);
+    text-align: center;
+}
+
+/* Botones Generales */
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s, opacity 0.2s;
+    font-family: inherit;
+}
+
+button:active {
+    transform: scale(0.98); /* Efecto de presionar */
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Botones específicos por color psicológico */
+#miBoton {
+    background-color: var(--text-main);
+    margin-bottom: 10px;
+    align-self: center;
+    width: auto;
+    padding: 10px 20px;
+}
+
+#BotonA {
+    background-color: var(--accent);
+    color: #333; /* Texto oscuro para contraste en amarillo */
+    margin-bottom: 20px;
+    align-self: center;
+    width: auto;
+    padding: 10px 20px;
+}
+
+/* Grid para los botones de la calculadora */
+.calc-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#BotonS { background-color: var(--success); } /* Verde: Sumar es agregar */
+#BotonR { background-color: var(--danger); }  /* Rojo: Restar es quitar */
+#BotonM { background-color: var(--warning); color: #333; } /* Naranja: Multiplicar */
+#BotonD { background-color: var(--info); }    /* Morado: Dividir es complejo */
+
+/* Responsive */
+@media (max-width: 480px) {
+    form {
+        padding: 1.5rem;
+    }
+    .calc-buttons {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+}

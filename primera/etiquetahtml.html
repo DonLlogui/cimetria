@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Etiquetas HTML</title>
+  <link rel="stylesheet" href="css/html.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Etiquetas HTML Esenciales</h1>
+      <p>Desde HTML4 hasta HTML5: estructura, símbolos y elementos clave</p>
+    </header>
+
+    <section class="concept">
+      <h2>¿Qué es HTML?</h2>
+      <p>
+        <strong>HTML (HyperText Markup Language)</strong> es el lenguaje estándar para crear páginas web. 
+        Define la estructura del contenido mediante <em>etiquetas</em> rodeadas por los símbolos <code>&lt;</code> y <code>&gt;</code>.
+      </p>
+    </section>
+
+    <section class="container">
+       <header>
+      <h2>HTML4 vs HTML5</h2>
+      <p>
+        <strong>HTML4</strong> (1997) introdujo mejoras en accesibilidad y separación de contenido/estilo.  
+        <strong>HTML5</strong> (2014) añadió nuevas etiquetas semánticas (<code>&lt;header&gt;</code>, <code>&lt;section&gt;</code>, etc.), soporte nativo para audio/video, y APIs modernas.
+      </p>
+      </header>
+    </section>
+
+    <section class="concept">
+      <h2>¿Por qué los símbolos <code>&lt;</code> y <code>&gt;</code>?</h2>
+      <p>
+        Estos símbolos indican el inicio y fin de una <em>etiqueta</em>. Por ejemplo: <code>&lt;p&gt;</code> inicia un párrafo y <code>&lt;/p&gt;</code> lo cierra. 
+        El navegador los interpreta como instrucciones, no como texto visible.
+      </p>
+    </section>
+
+    <section class="concept">
+      <h2><code>&lt;!DOCTYPE html&gt;</code></h2>
+      <p>
+        Declara que el documento usa HTML5. Debe ir al inicio del archivo.
+      </p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  ...
+&lt;/html&gt;</code></pre>
+    </section>
+
+    <section class="concept">
+      <h2><code>&lt;html&gt;</code></h2>
+      <p>
+        Es la raíz de todo documento HTML. Contiene todo el contenido de la página.
+      </p>
+      <pre><code>&lt;html lang="es"&gt;
+  &lt;head&gt;...&lt;/head&gt;
+  &lt;body&gt;...&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </section>
+
+    <section class="concept">
+      <h2><code>&lt;head&gt;</code></h2>
+      <p>
+        Contiene metadatos: título, enlaces a CSS, scripts, codificación, etc. No se muestra en la página.
+      </p>
+    </section>
+
+    <section class="concept">
+      <h2><code>&lt;title&gt;</code></h2>
+      <p>
+        Define el título de la página (aparece en la pestaña del navegador).
+      </p>
+      <pre><code>&lt;head&gt;
+  &lt;title&gt;Mi Página Web&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+    </section>
+
+    <section class="concept">
+      <h2><code>&lt;body&gt;</code></h2>
+      <p>
+        Contiene todo el contenido visible de la página: texto, imágenes, enlaces, etc.
+      </p>
+    </section>
+
+    <section class="concept">
+      <h2><code>&lt;link&gt;</code></h2>
+      <p>
+        Enlaza recursos externos, como hojas de estilo CSS. Es una etiqueta <em>autocerrante</em>.
+      </p>
+      <pre><code>&lt;link rel="stylesheet" href="estilo.css"&gt;</code></pre>
+    </section>
+
+    <section class="concept">
+      <h2><code>&lt;p&gt;</code></h2>
+      <p>
+        Define un párrafo de texto.
+      </p>
+      <pre><code>&lt;p&gt;Este es un párrafo.&lt;/p&gt;</code></pre>
+    </section>
+
+    <section class="container">
+      <header>
+      <h2><code>&lt;h1&gt; a &lt;h6&gt;</code></h2>
+      <p>
+        Encabezados de diferentes niveles. <code>&lt;h1&gt;</code> es el más importante, <code>&lt;h6&gt;</code> el menos.
+      </p>
+      <pre><code>&lt;h1&gt;Título principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;h3&gt;Sección menor&lt;/h3&gt;</code></pre>
+    </section>
+
+    <section class="concept">
+      <h2><code>&lt;header&gt;</code></h2>
+      <p>
+        Representa la cabecera de una página o sección (introducido en HTML5). Suele contener logotipos, menús o títulos.
+      </p>
+      <pre><code>&lt;header&gt;
+  &lt;h1&gt;Mi Sitio Web&lt;/h1&gt;
+  &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+</header>
+    </section>
+
+    <section class="concept">
+      <h2><code>&lt;div&gt;</code></h2>
+      <p>
+        Contenedor genérico sin significado semántico. Se usa para agrupar elementos y aplicar estilos.
+      </p>
+      <pre><code>&lt;div class="contenedor"&gt;
+  &lt;p&gt;Contenido dentro de un div&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    </section>
+
+    <section class="concept">
+      <h2><code>&lt;section&gt;</code></h2>
+      <p>
+        Representa una sección temática del contenido (HTML5). Tiene significado semántico, a diferencia de <code>&lt;div&gt;</code>.
+      </p>
+      <pre><code>&lt;section&gt;
+  &lt;h2&gt;Noticias&lt;/h2&gt;
+  &lt;p&gt;Últimas actualizaciones...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+    </section>
+
+    <section class="concept">
+      <h2><code>&lt;footer&gt;</code></h2>
+      <p>
+        Pie de página de un documento o sección. Puede contener información de contacto, enlaces legales, etc.
+      </p>
+      <pre><code>&lt;footer&gt;
+  &lt;p&gt;&copy; 2026 Mi Empresa&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+    </section>
+
+    <footer>
+      <p>© 2026 Guilleermo de la Peña | Aprendiendo HTML</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <section class="ferreteria-app">
+    <header>
+        <h1>🛠️ Inventario Master-Tool</h1>
+    </header>
+
+    <form id="productForm" class="grid-form">
+        <input type="text" id="nombre" placeholder="Nombre (ej. Martillo)" required>
+        <input type="number" id="precio" placeholder="Precio ($)" required>
+        <input type="url" id="imagen" placeholder="URL de la imagen (jpg/png)" required>
+        <button type="submit" id="btnGuardar">Guardar Producto</button>
+    </form>
+
+    <div id="listaProductos" class="productos-grid">
+        </div>
+</section>
+<script src="js/main.js"></script>
+</body>
+</html>

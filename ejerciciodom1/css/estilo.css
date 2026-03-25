@@ -1,0 +1,64 @@
+:root {
+    --primary: #2A5C82;
+    --success: #2ECC71;
+    --warning: #F1C40F;
+    --danger: #E74C3C;
+    --light: #F4F7F6;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--light);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+#app {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+header h1 { color: var(--primary); text-align: center; }
+
+.form-container { display: flex; gap: 10px; margin-bottom: 20px; }
+
+input { flex-grow: 1; padding: 10px; border: 2px solid #ddd; border-radius: 5px; }
+
+button#btnAdd { background: var(--primary); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; }
+
+/* Estilos para el CRUD */
+.goal-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    animation: fadeIn 0.5s ease;
+}
+
+.btn-delete { color: var(--danger); background: none; border: none; cursor: pointer; font-weight: bold; }
+.btn-edit { color: var(--warning); background: none; border: none; cursor: pointer; margin-right: 10px; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Clase para tarea completada */
+.completed {
+    background-color: #d4edda !important; /* Verde muy suave (Psicología: Alivio/Éxito) */
+    text-decoration: line-through;
+    color: #155724;
+    opacity: 0.7;
+}
+
+.btn-check {
+    color: var(--success);
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}

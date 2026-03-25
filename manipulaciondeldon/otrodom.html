@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Personaje</title>
+    <link rel="stylesheet" href="css/estilo2.css">
+</head>
+<body>
+
+    <div class="contenedor-principal">
+        <!-- Panel de Control (Izquierda) -->
+        <div class="panel-control">
+            <h2>Personaliza tu Avatar</h2>
+            
+            <label>Nombre del Héroe:</label>
+            <input type="text" id="inputNombre" placeholder="Ej: SuperDev">
+
+            <label>Color de Fondo:</label>
+            <input type="color" id="inputColorFondo" value="#3498db">
+
+            <label>Color de Texto:</label>
+            <input type="color" id="inputColorTexto" value="#ffffff">
+
+            <label>Nivel de Poder (1-100):</label>
+            <input type="range" id="inputPoder" min="1" max="100" value="50">
+            <span id="valorPoder">50</span>
+
+            <label>Agregar Habilidad:</label>
+            <div class="grupo-habilidad">
+                <input type="text" id="inputHabilidad" placeholder="Ej: Volar">
+                <button id="btnAgregar">+</button>
+            </div>
+
+            <button id="btnReiniciar" class="btn-secundario">Reiniciar Todo</button>
+        </div>
+
+        <!-- La Tarjeta del Personaje (Derecha) -->
+        <div class="tarjeta-personaje" id="tarjeta">
+            <div class="avatar-circle" id="avatarCircle"></div>
+            <h1 id="nombrePersonaje">Tu Nombre</h1>
+            <p class="nivel">Nivel de Poder: <span id="textoPoder">50</span>/100</p>
+            
+            <div class="barra-progreso">
+                <div class="barra-relleno" id="barraRelleno"></div>
+            </div>
+
+            <h3>Habilidades:</h3>
+            <ul id="listaHabilidades">
+                <li>Sin habilidades aún...</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/main2.js"></script>
+</body>
+</html>

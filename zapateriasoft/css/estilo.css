@@ -1,0 +1,203 @@
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #0a0e1a;
+    color: #e0f2fe;
+    font-family: system-ui, -apple-system, sans-serif;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+}
+
+/* Fondo con partículas simuladas + gradiente oscuro teal */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(0, 255, 200, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255, 180, 60, 0.06) 0%, transparent 50%),
+        linear-gradient(135deg, #0f172a 0%, #0a1425 100%);
+    z-index: -2;
+}
+
+/* Pequeños puntos/partículas brillantes (simulación simple) */
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size: 60px 60px, 40px 40px;
+    background-position: 0 0, 30px 30px;
+    opacity: 0.07;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.logo{
+    width: 280px;
+     border-radius: 20px;
+     box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(20, 184, 166, 0.08);
+
+}
+/* Contenedor principal */
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+    z-index: 1;
+}
+
+/* Texto Welcome Back grande con glow */
+.welcome-title {
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    background: linear-gradient(90deg, #14b8a6, #f59e0b, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 15px rgba(20, 184, 166, 0.5));
+    letter-spacing: -1px;
+}
+
+/* Caja del formulario (glassmorphism) */
+.form-box {
+    background: rgba(15, 23, 42, 0.38);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(56, 189, 248, 0.18);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(20, 184, 166, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Logo gota abstracta (simulada con CSS) */
+.form-box::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 220px;
+    background: radial-gradient(circle at 50% 30%, #14b8a6 0%, #f59e0b 60%, transparent 80%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    filter: blur(30px);
+    opacity: 0.45;
+    z-index: -1;
+}
+
+/* Títulos */
+h2 {
+    text-align: center;
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #e0f2fe;
+}
+
+/* Inputs con estilo glass */
+input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 1.2rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 12px;
+    color: white;
+    font-size: 1.05rem;
+    transition: all 0.25s ease;
+}
+
+input::placeholder {
+    color: #94a3b8;
+}
+
+input:focus {
+    outline: none;
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Botón Login con gradiente cian-azul */
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 0.8rem;
+    background: linear-gradient(90deg, #14b8a6, #0ea5e9);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(20, 184, 166, 0.35);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(20, 184, 166, 0.5);
+    background: linear-gradient(90deg, #0ea5e9, #14b8a6);
+}
+
+/* Botón Registrarme (variante) */
+.btn-reg {
+    background: linear-gradient(90deg, #f59e0b, #fb923c);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+}
+
+.btn-reg:hover {
+    background: linear-gradient(90deg, #fb923c, #f59e0b);
+    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.55);
+}
+
+/* Texto inferior */
+p {
+    text-align: center;
+    margin-top: 1.6rem;
+    color: #94a3b8;
+    font-size: 0.97rem;
+}
+
+a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
+}
+
+/* Ocultar register inicialmente */
+.hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .welcome-title { font-size: 2.6rem; }
+    .form-box { padding: 2rem 1.5rem; }
+}

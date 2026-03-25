@@ -1,0 +1,180 @@
+
+        <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario de Tienda</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        
+        .input-group {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        input, button {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #5568d3;
+        }
+        
+        .btn-buscar {
+            background: #48bb78;
+        }
+        
+        .btn-buscar:hover {
+            background: #38a169;
+        }
+        
+        .btn-stock {
+            background: #ed8936;
+        }
+        
+        .btn-stock:hover {
+            background: #dd6b20;
+        }
+        
+        .results {
+            margin-top: 30px;
+        }
+        
+        .results h2 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        th {
+            background-color: #f7fafc;
+            font-weight: bold;
+            color: #4a5568;
+        }
+        
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        
+        .stock-bajo {
+            color: #e53e3e;
+            font-weight: bold;
+        }
+        
+        .stock-medio {
+            color: #dd6b20;
+        }
+        
+        .stock-alto {
+            color: #38a169;
+            font-weight: bold;
+        }
+        
+        .message {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .success {
+            background-color: #c6f6d5;
+            color: #22543d;
+        }
+        
+        .error {
+            background-color: #fed7d7;
+            color: #742a2a;
+        }
+        
+        .info {
+            background-color: #bee3f8;
+            color: #2c5282;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏪 Sistema de Inventario</h1>
+        
+        <div class="input-group">
+            <input type="text" id="productoBuscado" placeholder="Buscar producto...">
+            <button class="btn-buscar" onclick="buscarProducto()">🔍 Buscar</button>
+            <button class="btn-stock" onclick="mostrarStockBajo()">📊 Stock Bajo</button>
+        </div>
+        
+        <div class="input-group">
+            <input type="text" id="nuevoProducto" placeholder="Nombre del producto">
+            <input type="number" id="cantidadProducto" placeholder="Cantidad" min="0">
+            <button onclick="agregarProducto()">➕ Agregar</button>
+        </div>
+        
+        <div id="mensaje"></div>
+        
+        <div class="results">
+            <h2>📋 Lista de Productos</h2>
+            <div id="tablaProductos"></div>
+        </div>
+    </div>
+<script src="js/main.js"></script>
+</body>
+</html>

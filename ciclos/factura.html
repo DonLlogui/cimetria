@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistema de Facturación</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <div class="logo">
+                <h1>🏥 Sistema de Facturación</h1>
+                <p>Facturas rápidas y seguras</p>
+            </div>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" id="usuario" name="usuario" placeholder="Ingrese su usuario" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="contraseña">Contraseña:</label>
+                    <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña" required>
+                </div>
+                
+                <button type="button" id="btnLogin" onclick="iniciarSesion()">
+                    <span>Iniciar Sesión</span>
+                    <i>→</i>
+                </button>
+            </form>
+            
+            <div class="mensaje" id="mensaje"></div>
+        </div>
+    </div>
+    
+    <script src="js/factu.js"></script>
+</body>
+</html>
