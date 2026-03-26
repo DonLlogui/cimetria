@@ -1,12 +1,20 @@
-const Conexion = require('./bd/Conexion');
+const conexion = require('./bd/Conexion'); 
 
 class ProductoModelo {
     constructor() {
-        if (ProductoModelo.instance) {
-            return ProductoModelo.instance;
+        this.conexion = conexion; 
+    }
+
+    async obtenerProductos() {
+        try {
+            const query = 'SELECT * FROM productos';
+            // this.conexion ya es el objeto que tiene el método query
+            const result = await this.conexion.query(query);
+            return result.rows;
+        } catch (error) {
+            console.error('Error al obtener productos:', error);
+            throw error;
         }
-        ProductoModelo.instance = this;
-        this.conexion = new Conexion();
     }
 
     async obtenerProductos() {
@@ -22,7 +30,7 @@ class ProductoModelo {
 
     async obtenerProductoPorId(id) {
         try {
-            const query = 'SELECT * FROM productos WHERE id = $1';
+            const query = 'SELECT * FROM productos WHERE idproducto = $1';
             const result = await this.conexion.query(query, [id]);
             return result.rows[0];
         } catch (error) {
@@ -77,7 +85,7 @@ class ProductoModelo {
     
     async editarProducto(id, articulo) {
         try {
-            const query = 'UPDATE productos SET producto = $1, talla = $2, color = $3, estilo = $4, categoria = $5 WHERE id = $6 RETURNING *';
+            const query = 'UPDATE productos SET producto = $1, talla = $2, color = $3, estilo = $4, categoria = $5 WHERE idproducto = $6 RETURNING *';
             const values = [articulo.producto, articulo.talla, articulo.color, articulo.estilo, articulo.categoria, id];
             const result = await this.conexion.query(query, values);
             return result.rows[0];
@@ -89,7 +97,7 @@ class ProductoModelo {
     }
     async eliminarProducto(id) {
         try {
-            const query = 'DELETE FROM productos WHERE id = $1 RETURNING *';
+            const query = 'DELETE FROM productos WHERE idproducto = $1 RETURNING *';
             const result = await this.conexion.query(query, [id]);
             return result.rows[0];
         } catch (error) {
@@ -98,5 +106,5 @@ class ProductoModelo {
 }
 }
 
-module.exports = ProductoModelo;
+module.exports = new ProductoModelo();
            

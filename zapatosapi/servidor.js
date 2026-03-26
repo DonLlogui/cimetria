@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Rutas
 app.use('/app', crearcliente);//localhost:3333/app/
-app.use('/gestionproducto', gestionproducto); //localhost:3333/gestionproducto/
+app.use('/app/productos/', gestionproducto); //localhost:3333/gestionproducto/
 
 
 // Ruta base o principal

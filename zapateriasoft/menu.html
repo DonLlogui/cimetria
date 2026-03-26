@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel - Measurelab</title>
+    <link rel="icon" type="logo-Olgroup" href="./image/logo-login.jpg">
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <img src="./imagen/logo.png" alt="logo" class="sidebar-logo">
+            <button id="close-sidebar" class="btn-icon"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="sidebar-menu">
+            <a href="#" class="menu-item active" data-section="productos">
+                <i class="fas fa-boxes"></i> Productos
+            </a>
+            <a href="#" class="menu-item" data-section="reportes">
+                <i class="fas fa-chart-bar"></i> Reportes
+            </a>
+            <a href="#" class="menu-item" data-section="configuracion">
+                <i class="fas fa-cog"></i> Configuración
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <button id="btn-logout" class="btn-logout">
+                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+            </button>
+        </div>
+    </aside>
+
+    <!-- Overlay para móvil -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <button id="toggle-sidebar" class="btn-icon menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1>Gestión de Productos</h1>
+            <div class="user-info">
+                <span id="user-name">Usuario</span>
+                <img src="./imagen/avatar.png" alt="avatar" class="avatar">
+            </div>
+        </header>
+
+        <!-- Sección Productos -->
+        <section id="productos" class="section active">
+            <!-- Formulario Crear/Editar -->
+            <div class="card form-card">
+                <h2><i class="fas fa-plus-circle"></i> <span id="form-title">Nuevo Producto</span></h2>
+                <form id="producto-form">
+                    <input type="hidden" id="prod-id">
+                    <div class="form-grid">
+                        <input type="text" id="prod-nombre" placeholder="Nombre del producto *" required>
+                        <input type="text" id="prod-talla" placeholder="Talla *" required>
+                        <input type="text" id="prod-color" placeholder="Color *" required>
+                        <input type="text" id="prod-estilo" placeholder="Estilo *" required>
+                        <input type="text" id="prod-categoria" placeholder="Categoría *" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary" id="btn-submit">
+                            <i class="fas fa-save"></i> Guardar Producto
+                        </button>
+                        <button type="button" class="btn-secondary" id="btn-cancel">
+                            <i class="fas fa-times"></i> Cancelar
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Buscadores -->
+            <div class="card search-card">
+                <h3><i class="fas fa-search"></i> Buscar Productos</h3>
+                <div class="search-grid">
+                    <input type="text" id="search-nombre" placeholder="Buscar por nombre...">
+                    <input type="text" id="search-categoria" placeholder="Buscar por categoría...">
+                    <input type="text" id="search-estilo" placeholder="Buscar por estilo...">
+                    <button id="btn-search" class="btn-primary">
+                        <i class="fas fa-search"></i> Buscar
+                    </button>
+                    <button id="btn-clear" class="btn-secondary">
+                        <i class="fas fa-eraser"></i> Limpiar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tabla de Productos -->
+            <div class="card table-card">
+                <div class="table-header">
+                    <h3><i class="fas fa-list"></i> Listado de Productos</h3>
+                    <span id="total-productos" class="badge">0 productos</span>
+                </div>
+                <div class="table-responsive">
+                    <table id="productos-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Producto</th>
+                                <th>Talla</th>
+                                <th>Color</th>
+                                <th>Estilo</th>
+                                <th>Categoría</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- Se llena dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="no-results" class="no-results hidden">
+                    <i class="fas fa-inbox"></i>
+                    <p>No se encontraron productos</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Otras secciones (placeholder) -->
+        <section id="reportes" class="section hidden">
+            <div class="card"><h2>📊 Reportes - Próximamente</h2></div>
+        </section>
+        <section id="configuracion" class="section hidden">
+            <div class="card"><h2>⚙️ Configuración - Próximamente</h2></div>
+        </section>
+    </main>
+
+    <!-- Modal de confirmación -->
+    <div id="modal-confirm" class="modal hidden">
+        <div class="modal-content">
+            <h3><i class="fas fa-exclamation-triangle"></i> Confirmar eliminación</h3>
+            <p>¿Estás seguro de eliminar este producto? Esta acción no se puede deshacer.</p>
+            <div class="modal-actions">
+                <button id="modal-cancel" class="btn-secondary">Cancelar</button>
+                <button id="modal-delete" class="btn-danger">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/menu.js" type="module"></script>
+</body>
+</html>

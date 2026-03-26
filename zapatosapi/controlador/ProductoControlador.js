@@ -185,4 +185,4 @@ class ProductoControlador {
     }
 
 }
-module.exports = ProductoControlador;
+module.exports = new ProductoControlador();
